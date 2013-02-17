@@ -1,0 +1,20 @@
+<div id="title">
+  Invertavera
+</div>
+<div id="desc">
+  Invertavera is a game where the computer lies to you about your favorite musical artists and you have to figure out
+  what is fact and what is fiction. Start by selecting a genre. A song by an artist in that genre will start playing.
+  You are presented with snippets of biographical information and must decide if this is the authentic bio of the current
+  artist, or some fabrication of information from a related/similar artist.
+</div>
+<div id="get-started">
+  To get started, select a genre:
+  <form action="/play" method="get">
+    <select id="genre-select" name="genre">
+      <% for genre in @genres %>
+      <option value="<%= genre.gsub(' ', '-') %>"><%= genre.titlecase %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Play"/>
+  </form>
+</div>

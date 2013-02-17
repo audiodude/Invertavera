@@ -1,0 +1,47 @@
+<script type="text/javascript">
+  var chosen_artist = <%= @chosen_artist.to_json %>
+  var bio_artist = <%= @bio_artist.to_json %>
+  
+  function load_song() {
+    R.ready(function() {
+      R.player.play({source: <%= @rdio_id.sub('rdio-WW:track:', '').to_json %>});
+    });
+  }
+  
+  function run() {
+    load_song();
+  
+    var btn_correct = null;
+    var btn_wrong = null;
+    if(chosen_artist.id == bio_artist.id) {
+      btn_correct = $('#fact');
+      btn_wrong = $('#fiction');
+    } else {
+      btn_correct = $('#fiction');
+      btn_wrong = $('#fact');
+    }
+
+    btn_correct.click(function() {
+      var msg = 'You are right! The bio was for ' + bio_artist.name;
+      $('#msg').html(msg);
+    });
+    btn_wrong.click(function() {
+      var msg = 'Sorry you\'re wrong! The bio was for ' + bio_artist.name;
+      $('#msg').html(msg);
+    });
+  }
+  
+  $(document).ready(run);
+</script>
+<div id="artist">
+  The artist is <span id="artist-name"><%= @chosen_artist['name'] %></span>
+</div>
+<div id="bio">
+  <%= @bio %>
+</div>
+<div id="answer">
+  <button id="fact">Fact: Actual Bio</button><br/>
+  <button id="fiction">Total Fiction</button>
+</div>
+<div id="msg">
+</div>
