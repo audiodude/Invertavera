@@ -23,8 +23,15 @@ end
 
 def treat_bio(bio, chosen_name, bio_name)
   rovi_link = /\[roviLink="[^"]+"\]([^\[]+)\[\/roviLink\]/
+  italic = /\[muzeItalic\]([^\[]+)\[\/muzeItalic\]/
   bio.gsub!(rovi_link, '\1')
+  bio.gsub!(italic, '\1')
   bio.gsub!(bio_name, chosen_name)
+  
+  chosen_last = chosen_name.split(' ')[-1]
+  bio_last = bio_name.split(' ')[-1]
+  bio.gsub!(bio_last, chosen_last)
+
   return bio
 end
 

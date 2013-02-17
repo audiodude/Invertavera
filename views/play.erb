@@ -33,15 +33,18 @@
   
   $(document).ready(run);
 </script>
-<div id="artist">
-  The artist is <span id="artist-name"><%= @chosen_artist['name'] %></span>
-</div>
-<div id="bio">
-  <%= @bio %>
-</div>
-<div id="answer">
-  <button id="fact">Fact: Actual Bio</button><br/>
-  <button id="fiction">Total Fiction</button>
-</div>
-<div id="msg">
+<div id="column">
+  <div id="artist">
+    <%= @chosen_artist['name'] %>
+  </div>
+  <div id="bio">
+    <%= @bio %>
+  </div>
+  <div id="answer">
+    Is this the actual bio for <%= @chosen_artist['name'] %> or total fiction?<br/>
+    <button id="fact">Fact: Actual Bio</button>
+    <button id="fiction">Total Fiction</button>
+
+    <div id="msg"></div>
+  </div>
 </div>
