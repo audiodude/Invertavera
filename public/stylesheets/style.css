@@ -1,0 +1,42 @@
+body {
+  background-color: #F0F2C4;
+}
+
+#column {
+  width: 1000px;
+  margin: auto;
+}
+
+#artist {
+  margin-top: 40px;
+  width: 450px;
+  height: 1.25em;
+  border: 10px solid #C4E7F2;
+  border-left: none;
+  background-color: #2A748C;
+  font-size: 32px;
+  color: #FFF;
+  text-align: right;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+#bio {
+  border: 20px solid #C4E7F2;
+  background-color: #FFF;
+  text-align: justify;
+  padding: 4px;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+
+#answer {
+  border: 1px solid #000;
+  font-size: 24px;
+  font-family: sans-serif;
+  padding: 10px;
+  background-color: white;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.75em;
+}
